@@ -1,11 +1,11 @@
 <div class="container-fluid">
   <h2 class="text-center">Create a new Goal</h2>
   <hr>
-  <form>
+  <form (ngSubmit)="submitQuote()" #quotesform="ngForm">
       <div class="form-group">
 
           <label for="quote">Quotes</label>
-          <input type="text" required class="form-control" id="name" [(ngModel)]="newGoal.name" name="quote" #quote="ngModel" required>
+          <input type="text" required class="form-control" id="quote" [(ngModel)]="newQuote.quote" name="quote" #quote="ngModel" required>
           <div [hidden]="quote.valid || quote.pristine" class="alert alert-denger">
             <p>Quote is required</p>
           </div>
