@@ -8,10 +8,16 @@ import { Quote } from '../quote';
 })
 export class QuotesComponent implements OnInit {
   userquotes:Quote[]=[
-  new Quote (id:1, quote:'Thumbs up',upvote:0,downvote:0),
-   new Quote (id:2, quote:'Thumbs down',upvote:3,downvote:0),
-    new Quote (id:3, quote:'Thumbs up',upvote:5,downvote:3)
-  ]
+  new Quote (1, 'Thumbs up',0, 0),
+   new Quote (2, 'Thumbs down',3,0),
+    new Quote (3, 'Thumbs up',5,3)
+  ];
+  addNewQuote(quotes:any){
+    let quotelenghth = this.userquotes.length;
+    quotes.id = quotelenghth+1;
+    this.userquotes.push(quotes)
+
+  }
 
   constructor() { }
 
