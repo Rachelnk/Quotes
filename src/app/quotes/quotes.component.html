@@ -5,7 +5,7 @@
       <h1>Quotes List</h1>    
      
       <ul *ngFor='let quote for userquotes'>
-        <li> {{ quote.quote }} <span class ="text-primary">{{quote.upvote}}</span> <span class="text-warning">{{quote.downvote}}</span>     
+        <li> {{ quote.quote }} <span class ="text-primary"> Upvote: {{quote.upvote}}</span> <span class="text-warning"> Downvote: {{quote.downvote}}</span>     
         </li>
       </ul>
 

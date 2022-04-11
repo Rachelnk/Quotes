@@ -13,15 +13,15 @@ export class QuotesComponent implements OnInit {
     new Quote (3, 'Thumbs up',5,3)
   ];
   addNewQuote(quotes:any){
-    let quotelenghth = this.userquotes.length;
-    quotes.id = quotelenghth+1;
+    let quotelength = this.userquotes.length;
+    quotes.id = quotelength+1;
     this.userquotes.push(quotes)
 
   }
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }
