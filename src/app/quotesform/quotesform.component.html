@@ -18,9 +18,9 @@
           </div>
 
           <label for="quotecontribtor">Your Name</label>
-          <input type="text" required class="form-control" id="quoteBy" [(ngModel)]="newQuote.quoteBy" name="quoteBy" #quoteBy="ngModel" required>
-          <div [hidden]="quoteBy.valid || quoteBy.pristine" class="alert alert-denger">
-            Display {{newQuote.quoteBy}}
+          <input type="text" required class="form-control" id="quoteBy" [(ngModel)]="newQuote.quoteContributor" name="quoteBy" #quoteContributor="ngModel" required>
+          <div [hidden]="quoteContributor.valid || quoteContributor.pristine" class="alert alert-denger">
+            Display {{newQuote.quoteContributor}}
             <p>Your name is required</p>
           </div>
 

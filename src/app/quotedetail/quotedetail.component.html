@@ -1,3 +1,5 @@
-<p>{{quote.quoteBy}}</p> <br>
+<p>{{quote.quoteBy}}</p>
 <p> <span class ="text-primary">Upvote: {{quote.upvote}}</span>
-   <span class="text-warning"> Downvote: {{quote.downvote}}</span> </p>
+   <span style="color:red"> Downvote: {{quote.downvote}}</span>
+  </p>
+  <button (click)="quoteDelete(true)">Delete Quote</button>
