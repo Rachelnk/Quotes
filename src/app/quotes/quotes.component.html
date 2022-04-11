@@ -2,8 +2,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12" id="description">
-      <p class= "app-description">Please share your favorite inspirational quote. <br> It can be a quote by your favorite actor, musician, <br> author, mentor or even one that you came up with !</p> 
-      <p>Here are some favorite quotes: </p>
+      <p class= "app-description">Please share your favorite inspirational quote. <br> It can be a quote by your favorite, musician, <br> author or even one that you came up with !</p> 
+      <p style="font-size: 30px;">Here are some favorite quotes: </p>
         <ul class="myquotes">
           <li> We cannot solve our problems with the same thinking we used when we created them. -Albert Einstein.
 
@@ -14,8 +14,12 @@
         </ul>
     </div>
     <div class="col-md-6">
-      <h1>Quotes List</h1>   
+      <h1>Quotes Form</h1>
+      <app-quotesform (addQuote)="addNewQuote($event)"></app-quotesform>
       
+    </div>
+    <div class="col-md-6" id="quotes-list">
+      <h1>Quotes List</h1>    
       
      
       <ul *ngFor='let quote of userquotes; let i =index'>
@@ -52,11 +56,7 @@
 
 
     </div>
-    <div class="col-md-6">
-      <h1>Quotes Form</h1>
-      <app-quotesform (addQuote)="addNewQuote($event)"></app-quotesform>
-      
-    </div>
+    
 
   </div>
 </div>

@@ -4,12 +4,14 @@
   <form (ngSubmit)="submitQuote()" #quotesform="ngForm">
       <div class="form-group">
 
-          <label for="quote">Quotes: </label>
-          <input type="text" required class="form-control" id="quote" [(ngModel)]="newQuote.quote" name="quote" #quote="ngModel" required>
+          <label for="quote">Quote: </label>
+          <!-- <input type="text" required class="form-control" id="quote" [(ngModel)]="newQuote.quote" name="quote" #quote="ngModel" required> -->
+          <textarea name="quote" id="quote" cols="15" rows="5" class="form-control" [(ngModel)]="newQuote.quote" #quote="ngModel" ></textarea>
           <div [hidden]="quote.valid || quote.pristine" class="alert alert-denger">
             Display {{newQuote.quote}}
             <p>Quote is required</p>
           </div>
+
           <label for="quoteBy">Author: </label>
           <input type="text" required class="form-control" id="quoteBy" [(ngModel)]="newQuote.quoteBy" name="quoteBy" #quoteBy="ngModel" required>
           <div [hidden]="quoteBy.valid || quoteBy.pristine" class="alert alert-denger">
@@ -25,7 +27,7 @@
           </div>
 
       </div>
-      <button type="submit" class="btn btn-success">Add Quote</button>
+      <button type="submit" class="btn btn-success" style="margin-top: 8px;">Add Quote</button>
       
   </form>
 </div>
