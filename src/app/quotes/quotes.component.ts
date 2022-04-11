@@ -7,9 +7,9 @@ import { Quote } from '../quote';
   styleUrls: ['./quotes.component.css']
 })
 export class QuotesComponent implements OnInit {
-  userquotes:Quote[]=[
-  new Quote (1, 'Thumbs up',0, 0),
-   new Quote (2, 'Thumbs down',3,0),
+  userquotes: Quote[]=[
+    new Quote (1, 'Thumbs up',0, 0),
+    new Quote (2, 'Thumbs down',3,0),
     new Quote (3, 'Thumbs up',5,3)
   ];
   addNewQuote(quotes:any){
