@@ -22,6 +22,7 @@ export class QuotesComponent implements OnInit {
     this.userquotes.push(quotes)
 
   }
+  
   deleteQuote(isComplete:boolean, index:any){
     if (isComplete) {
       let toDelete = confirm(`Are you sure want to delete ${this.userquotes[index].quote}?`)
@@ -30,6 +31,18 @@ export class QuotesComponent implements OnInit {
       }
     }
   }
+  getQuotes (){
+    return this.userquotes;
+  }
+  voteQuote(quote:any,type:number) {
+    if(this.getQuotes().indexOf(quote)>= 0 ) {
+      type === 0 ? this.getQuotes()[this.getQuotes().indexOf(quote)].upvote++ : this.getQuotes()[this.getQuotes().indexOf(quote)].downvote++;
+      this.rankQuotes();    
+  }
+}
+rankQuotes(): void{
+  
+}
 
   constructor() { }
 
