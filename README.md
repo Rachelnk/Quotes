@@ -21,12 +21,13 @@ The purpose of this application is to enable users to create quotes and have tho
 There are no known bugs at the moment.
 
 ## Technologies used
+* Typescript
+* Javascript
 * HTML
 * CSS
-* Javascript
-* Typescript
+
 ## Support and contact details
-##### You can reach out via `rachael.kiarie@student.moringaschool.com`
+##### You can reach out via `rachael.kiarie@student.moringaschool.com` or `rachelnk94@gmail.com`
  ### License
  * MIT License
  ## Copyright (c) 2022
