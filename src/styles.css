@@ -13,34 +13,24 @@
   padding: 0;
   
   }
-  li {
-    color:black;
-    font-size: 20px;
-  }
+
   .app-description {
     font-size: 30px;
     font-family: 'Josefin Sans', sans-serif;
   }
-  .quotes-list li {
-    background-color:#f5f5f5 ;
-    
-
-  }
+  
   #list {
     color: #555;
-    font-size: 20px;
-    padding: 0 !important;
-    width: 500px;
+    font-size: 20px;    
     font-family: courier, monospace;
-    border: 1px solid #dedede;
-
-  }
-  #list {
+    /* border: 1px solid #dedede; */
     list-style: none;
+    padding: 0 !important;
+    /* width: 500px;
     border-bottom: 1px dotted #ccc;
     text-indent: 25px;
     height: auto;
-    padding: 10px;
+    padding: 10px; */
   }
 
 
@@ -59,6 +49,11 @@
   .downvote {
     margin-left: 40px;
   }
+  #details-btn {
+    margin-top: 5px ;
+    margin-bottom: 10px;
+  }
   #delete-btn {
     margin-left: 30px;
+  
   }
