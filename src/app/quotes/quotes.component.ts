@@ -12,6 +12,10 @@ export class QuotesComponent implements OnInit {
     new Quote (1, 'Float like a butterfly, sting like a bee.','Muhammad Ali', "Rachel Kiarie",6, 2),
     new Quote (3, 'Lies run sprints, but the truth runs marathons.','Michael Jackson',"Rachel Kiarie",10,3)
   ];
+  showDetails(index:any){
+    this.userquotes[index].showDescription = !this.userquotes[index].showDescription;
+
+  }
   addNewQuote(quotes:any){
     let quotelength = this.userquotes.length;
     quotes.id = quotelength+1;

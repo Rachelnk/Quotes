@@ -18,10 +18,13 @@
       
       
      
-      <ul *ngFor='let quote of userquotes'>
+      <ul *ngFor='let quote of userquotes; let i =index'>
         <div *ngIf="quote.id == 1; then highlight else empty"></div>
         <ng-template #highlight>
-          <li appHighlight> {{ quote.quote }} <span class ="text-primary"> Upvote: {{quote.upvote}}</span> <span class="text-warning"> Downvote: {{quote.downvote}}</span>     
+          <li appHighlight> {{ quote.quote }}  
+            <button (click)="showDetails(i)">Toggle Details</button> 
+            <app-quotedetail *ngIf="quote.showDescription" [quote]="quote"></app-quotedetail>
+               
           </li>
 
         </ng-template>
