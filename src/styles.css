@@ -59,6 +59,6 @@
   .downvote {
     margin-left: 40px;
   }
-  #details {
-    border-radius: 50%;
+  #delete-btn {
+    margin-left: 30px;
   }

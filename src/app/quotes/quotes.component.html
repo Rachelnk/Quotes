@@ -13,51 +13,64 @@
           </li>
         </ul>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <h1>Quotes Form</h1>
-      <app-quotesform (addQuote)="addNewQuote($event)"></app-quotesform>
+      <div class="form-section">
+        <app-quotesform (addQuote)="addNewQuote($event)"></app-quotesform>
+
+      </div>
+      
       
     </div>
-    <div class="col-md-6" id="quotes-list" >
-      <h1>Quotes List</h1>    
+    <div class="col-md-8" id="quotes-list" >
+      <h1>Quotes List</h1>  
+      <div class="row">
+        <div class="col-md-6">
+          <ul *ngFor='let quote of userquotes; let i =index'>
+            <div *ngIf="quote.id == 1; then highlight else empty"></div>
+    
+            <!-- Highlight quote with the highest upvotes -->
+            <ng-template #highlight>
+            <li appHighlight id="list"> <div class="quote"> {{ quote.quote }}</div>  
+                <div class="show-details">
+                  <button id="details-btn" (click)="showDetails(i)" class="btn btn-secondary dropdown-toggle" >Details</button> 
+                 </div>
+                <app-quotedetail *ngIf="quote.showDescription" [quote]="quote" (isComplete)="deleteQuote($event, i)"></app-quotedetail>
+                <!-- Add downvote and upvote button -->
+                <div class="quote-votes">
+                  <button class="upvote btn btn-success btn-sm " (click)='voteQuote(quote,0)'>Upvote</button>
+                  <button class="downvote btn btn-secondary btn-sm" (click)='voteQuote(quote,1)'>Downvote</button>
+              </div>
+                
+                   
+              </li>
+              
+            <!-- Display the other quotes with less upvotes -->
+            </ng-template>
+            <ng-template #empty>
+              <li id="list"> <div class="quote"> {{ quote.quote }}</div>  
+                <div class="show-details">
+                  <button id="details-btn" (click)="showDetails(i)"  class="btn btn-secondary dropdown-toggle">Details</button>   
+                  <app-quotedetail *ngIf="quote.showDescription" [quote]="quote" (isComplete)="deleteQuote($event, i)"></app-quotedetail> 
+                </div>
+                <!-- Add upvote and downvote button -->
+                <div class="quote-votes">
+                  <button class="upvote btn btn-success btn-sm" (click)='voteQuote(quote,0)'>Upvote</button>
+                  <button class="downvote btn btn-secondary btn-sm" (click)='voteQuote(quote,1)'>Downvote</button>
+                </div>   
+              </li>
+    
+            </ng-template>
+            
+          </ul>
+
+        </div>
+        
+
+      </div>  
       
      
-      <ul *ngFor='let quote of userquotes; let i =index'>
-        <div *ngIf="quote.id == 1; then highlight else empty"></div>
-
-        <!-- Highlight quote with the highest upvotes -->
-        <ng-template #highlight>
-        <li appHighlight id="list"> <div class="quote"> {{ quote.quote }}</div>  
-            <div class="show-details">
-              <button id="details-btn" (click)="showDetails(i)" class="btn btn-secondary dropdown-toggle" >Details</button> 
-             </div>
-            <app-quotedetail *ngIf="quote.showDescription" [quote]="quote" (isComplete)="deleteQuote($event, i)"></app-quotedetail>
-            <!-- Add downvote and upvote button -->
-            <div class="quote-votes">
-              <button class="upvote btn btn-success btn-sm " (click)='voteQuote(quote,0)'>Upvote</button>
-              <button class="downvote btn btn-secondary btn-sm" (click)='voteQuote(quote,1)'>Downvote</button>
-          </div>
-            
-               
-          </li>
-          
-        <!-- Display the other quotes with less upvotes -->
-        </ng-template>
-        <ng-template #empty>
-          <li id="list"> <div class="quote"> {{ quote.quote }}</div>  
-            <div class="show-details">
-              <button id="details-btn" (click)="showDetails(i)"  class="btn btn-secondary dropdown-toggle">Details</button>   <app-quotedetail *ngIf="quote.showDescription" [quote]="quote" (isComplete)="deleteQuote($event, i)"></app-quotedetail> 
-            </div>
-            <!-- Add upvote and downvote button -->
-            <div class="quote-votes">
-              <button class="upvote btn btn-success btn-sm" (click)='voteQuote(quote,0)'>Upvote</button>
-              <button class="downvote btn btn-secondary btn-sm" (click)='voteQuote(quote,1)'>Downvote</button>
-            </div>   
-          </li>
-
-        </ng-template>
-        
-      </ul>
+      
 
 
     </div>
