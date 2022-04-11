@@ -9,8 +9,8 @@ import { Quote } from '../quote';
 })
 export class QuotesComponent implements OnInit {
   userquotes: Quote[]=[
-    new Quote (1, 'Float like a butterfly, sting like a bee.','Muhammad Ali', "Rachel Kiarie",6, 2),
-    new Quote (3, 'Lies run sprints, but the truth runs marathons.','Michael Jackson',"Rachel Kiarie",10,3)
+    new Quote (1, 'Float like a butterfly, sting like a bee.','Muhammad Ali', "Rachel Kiarie",6, 2,true),
+    new Quote (3, 'Lies run sprints, but the truth runs marathons.','Michael Jackson',"Rachel Kiarie",10,3, false)
   ];
   showDetails(index:any){
     this.userquotes[index].showDescription = !this.userquotes[index].showDescription;
@@ -30,6 +30,7 @@ export class QuotesComponent implements OnInit {
         this.userquotes.splice(index,1)
       }
     }
+    this.rankQuotes();
   }
   getQuotes (){
     return this.userquotes;
@@ -41,6 +42,24 @@ export class QuotesComponent implements OnInit {
   }
 }
 rankQuotes(): void{
+  let upvoted: number = Math.max.apply(Math, this.getQuotes().map(function(chosen)
+  {return chosen.upvote}));
+  if(upvoted > 0){
+    let upvotedQuote: any = this.getQuotes().find(function(selected){
+      return selected.upvote == upvoted
+    });
+    let favIndex: number = this.getQuotes().indexOf(upvotedQuote);
+    this.getQuotes().map((quote:any)=>{
+      if (favIndex === this.getQuotes().indexOf(quote)){
+        this.userquotes[favIndex].isFav = true;
+
+      }else {
+        quote.isFavorite =false;
+      }
+  
+    });
+
+  }
   
 }
 
