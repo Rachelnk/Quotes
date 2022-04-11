@@ -7,6 +7,7 @@
           <label for="quote">Quotes</label>
           <input type="text" required class="form-control" id="quote" [(ngModel)]="newQuote.quote" name="quote" #quote="ngModel" required>
           <div [hidden]="quote.valid || quote.pristine" class="alert alert-denger">
+            Display {{newQuote.quote}}
             <p>Quote is required</p>
           </div>
 
