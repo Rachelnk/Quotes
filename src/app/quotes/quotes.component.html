@@ -18,7 +18,7 @@
       
       
      
-      <ul *ngFor='let quote for userquotes'>
+      <ul *ngFor='let quote of userquotes'>
         <div *ngIf="quote.id == 1; then highlight else empty"></div>
         <ng-template #highlight>
           <li appHighlight> {{ quote.quote }} <span class ="text-primary"> Upvote: {{quote.upvote}}</span> <span class="text-warning"> Downvote: {{quote.downvote}}</span>     
