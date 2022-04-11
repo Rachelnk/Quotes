@@ -38,8 +38,7 @@
         </ng-template>
         <ng-template #empty>
           <li> {{ quote.quote }}
-            <button (click)="showDetails(i)">Toggle Details</button>  
-             <app-quotedetail *ngIf="quote.showDescription" [quote]="quote" (isComplete)="deleteQuote($event, i)"></app-quotedetail> 
+            <button (click)="showDetails(i)">Toggle Details</button>   <app-quotedetail *ngIf="quote.showDescription" [quote]="quote" (isComplete)="deleteQuote($event, i)"></app-quotedetail> 
             <!-- Add upvote and downvote button -->
             <div class="quote-votes">
               <button class="upvote btn btn-success btn-sm" (click)='voteQuote(quote,0)'>Upvote</button>
