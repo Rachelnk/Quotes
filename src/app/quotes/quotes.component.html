@@ -1,12 +1,22 @@
 <h1>Quotes</h1>
 <div class="container">
   <div class="row">
-    <div class="col-md-6" appHighlight>
+    <div class="col-md-6">
       <h1>Quotes List</h1>    
      
       <ul *ngFor='let quote for userquotes'>
-        <li> {{ quote.quote }} <span class ="text-primary"> Upvote: {{quote.upvote}}</span> <span class="text-warning"> Downvote: {{quote.downvote}}</span>     
-        </li>
+        <div *ngIf="quote.id == 1; then highlight else empty"></div>
+        <ng-template #highlight>
+          <li appHighlight> {{ quote.quote }} <span class ="text-primary"> Upvote: {{quote.upvote}}</span> <span class="text-warning"> Downvote: {{quote.downvote}}</span>     
+          </li>
+
+        </ng-template>
+        <ng-template #empty>
+          <li> {{ quote.quote }} <span class ="text-primary"> Upvote: {{quote.upvote}}</span> <span class="text-warning"> Downvote: {{quote.downvote}}</span>     
+          </li>
+
+        </ng-template>
+        
       </ul>
 
 
