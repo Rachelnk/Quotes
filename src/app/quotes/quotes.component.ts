@@ -36,15 +36,20 @@ export class QuotesComponent implements OnInit {
   getQuotes (){
     return this.userquotes;
   }
+  // === strictly ? assign a value based on type === 0 condition
   voteQuote(quote:any,type:number) {
     if(this.getQuotes().indexOf(quote)>= 0 ) {
       type === 0 ? this.getQuotes()[this.getQuotes().indexOf(quote)].upvote++ : this.getQuotes()[this.getQuotes().indexOf(quote)].downvote++;
       this.rankQuotes();    
   }
 }
+// show no of upvotes and downvotes.
+//apply() takes arguments as arrays
 rankQuotes(): void{
   let upvoted: number = Math.max.apply(Math, this.getQuotes().map(function(chosen)
-  {return chosen.upvote}));
+  {
+    return chosen.upvote
+  }));
   if(upvoted > 0){
     let upvotedQuote: any = this.getQuotes().find(function(selected){
       return selected.upvote == upvoted
@@ -55,7 +60,7 @@ rankQuotes(): void{
         this.userquotes[favIndex].isFav = true;
 
       }else {
-        quote.isFavorite =false;
+        quote.isFav =false;
       }
   
     });
