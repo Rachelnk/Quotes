@@ -1,12 +1,10 @@
 # Quotes
 
-The purpose of this application is to enable users to create quotes and have those quotes voted on whether they are terrible or are inspirational.
+## Description
+##### This application provides an interface for users to create quotes and have those quotes voted on whether they are inspirational or terrible by other users. The downvotes and the upvotes are displayed next to the specific quote.
 
 ## Authors
 #### Rachel Kiarie
-
-## Description
-##### This application provides an interface for users to create quotes and have those quotes voted on whether they are inspirational or terrible by other users. The downvotes and the upvotes are displayed next to the specific quote.
 
 ## Dependencies
 * There are no libraries you need to install at this point.
@@ -14,8 +12,9 @@ The purpose of this application is to enable users to create quotes and have tho
 
 ## Installation Instructions
 * Clone the repository to your local machine. e.g. `$ git clone remote URL`
-* In the command line type cd and the folder name where you've cloned the repo in your local machine.
-* In this folder open index.html, this is website's landing page.You can also see other folders for images, css files and JS files.
+* `cd quotes`
+* `npm install`
+* `ng serve` Navigate to `http://localhost:4200/`
 
 ## Bugs
 There are no known bugs at the moment.
