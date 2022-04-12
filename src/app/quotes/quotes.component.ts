@@ -9,8 +9,8 @@ import { Quote } from '../quote';
 })
 export class QuotesComponent implements OnInit {
   userquotes: Quote[]=[
-    new Quote (1, 'Float like a butterfly, sting like a bee.','Muhammad Ali', "Rachel Kiarie",6, 2,true),
-    new Quote (3, 'Lies run sprints, but the truth runs marathons.','Michael Jackson',"Rachel Kiarie",10,3, false)
+    new Quote (1, 'Float like a butterfly, sting like a bee.','Muhammad Ali', "Rachel Kiarie",6, 2,false, new Date(2022, 12, 4)),
+    new Quote (3, 'Lies run sprints, but the truth runs marathons.','Michael Jackson',"Rachel Kiarie",10,3, false, new Date(2022,11, 4))
   ];
   showDetails(index:any){
     this.userquotes[index].showDescription = !this.userquotes[index].showDescription;
@@ -19,6 +19,7 @@ export class QuotesComponent implements OnInit {
   addNewQuote(quotes:any){
     let quotelength = this.userquotes.length;
     quotes.id = quotelength+1;
+    quotes.createdAt = new Date(quotes.createdAt);
     this.userquotes.push(quotes)
 
   }

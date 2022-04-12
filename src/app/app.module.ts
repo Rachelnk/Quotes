@@ -9,6 +9,7 @@ import { QuotesformComponent } from './quotesform/quotesform.component';
 import { HighlightDirective } from './highlight.directive';
 import { QuotedetailComponent } from './quotedetail/quotedetail.component';
 import { TimecountPipe } from './timecount.pipe';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { TimecountPipe } from './timecount.pipe';
     QuotesformComponent,
     HighlightDirective,
     QuotedetailComponent,
-    TimecountPipe
+    TimecountPipe,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

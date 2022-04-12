@@ -1,5 +1,18 @@
 <p>~ <em>{{quote.quoteBy}}</em></p>
 <p> <span class ="text-primary">Upvote: {{quote.upvote}}</span>
       <span style="color:red"> Downvote: {{quote.downvote}}</span>
+      
+</p>
+<p>
+   <span class="time-elapsed">{{quote.createdAt|timecount}}</span>
+</p>
+<p>
+   <span class = "contributor">
+      By: {{quote.quoteContributor}}
+
+   </span>
+   <span class="submission-date">
+      {{quote.createdAt|date}}
+   </span>
 </p>
   <button (click)="quoteDelete(true)"  class="btn btn-secondary" id="delete-btn">Delete</button>
